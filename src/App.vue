@@ -2,6 +2,7 @@
   <div id="app">
     <v-app>
       <v-toolbar app>
+        <v-icon large left>mdi-twitter</v-icon>
         <v-toolbar-title>LMS keretrendszerek az iskolarendszerű szakképzésben - kérdőív</v-toolbar-title>
         <v-spacer/>
       </v-toolbar>
