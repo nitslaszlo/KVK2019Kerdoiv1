@@ -13,8 +13,10 @@
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
-                  <v-icon large left>place</v-icon>
-                  <div>1. Melyik megyében/megyékben található az intézmény?</div>
+                  <div>
+                    <v-icon class="floatleft" large left>place</v-icon>
+                    1. Melyik megyében/megyékben található az intézmény?
+                  </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-select
@@ -34,8 +36,10 @@
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
-                  <v-icon large left>school</v-icon>
-                  <div>2. Tanulók száma a nappali tagozaton</div>
+                  <div>
+                    <v-icon  class="floatleft" large left>school</v-icon>
+                    2. Tanulók száma a nappali tagozaton
+                  </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-select
@@ -53,8 +57,10 @@
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
-                  <v-icon large left>people</v-icon>
-                  <div>3. Főállású tanárok / szakoktatók száma az intézményben</div>
+                  <div>
+                    <v-icon  class="floatleft" large left>people</v-icon>
+                    3. Főállású tanárok / szakoktatók száma az intézményben
+                  </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-select
@@ -72,8 +78,10 @@
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
-                  <v-icon large left>supervisor_account</v-icon>
-                  <div>4. Főállású rendszergazdák száma</div>
+                  <div>
+                    <v-icon  class="floatleft" large left>supervisor_account</v-icon>
+                    4. Főállású rendszergazdák száma
+                  </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-select
@@ -91,8 +99,10 @@
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
-                  <v-icon large left>cloud_download</v-icon>
-                  <div>5. Internet kapcsolat letöltési sávszélessége</div>
+                  <div>
+                    <v-icon  class="floatleft" large left>cloud_download</v-icon>
+                    5. Internet kapcsolat letöltési sávszélessége
+                  </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-text-field
@@ -111,8 +121,10 @@
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
-                  <v-icon large left>desktop_mac</v-icon>
-                  <div>6. Tanulók által használt, LAN hálózatba kötött számítógépek száma</div>
+                  <div>
+                    <v-icon  class="floatleft" large left>desktop_mac</v-icon>
+                    6. Tanulók által használt, LAN hálózatba kötött számítógépek száma
+                  </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-text-field
@@ -131,8 +143,10 @@
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
-                  <v-icon large left>how_to_reg</v-icon>
-                  <div>7. Saját telepítésű LMS keretrendszer telepítéséhez és üzemeltetésre rendelkeznek megfelelően képzett szakemberrel</div>
+                  <div>
+                    <v-icon class="floatleft" large left>how_to_reg</v-icon>
+                    7. Saját telepítésű LMS keretrendszer telepítéséhez és üzemeltetésre rendelkeznek megfelelően képzett szakemberrel
+                  </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-select :items="igenNem" clearable label="Szakember" outline v-model="lmsEE"/>
@@ -143,8 +157,10 @@
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
-                  <v-icon large left>cloud_done</v-icon>
-                  <div>8. Saját telepítésű LMS keretrendszer üzemeltetésre rendelkeznek megfelelő hardver eszközökkel?</div>
+                  <div>
+                    <v-icon  class="floatleft" large left>cloud_done</v-icon>
+                    8. Saját telepítésű LMS keretrendszer üzemeltetésre rendelkeznek megfelelő hardver eszközökkel?
+                  </div>
                 </v-card-title>
                 <v-card-actions>
                   <v-select
@@ -245,5 +261,8 @@ export default class App extends Vue {
 }
 .myLink {
   text-decoration: none;
+}
+.floatleft {
+  float: left;
 }
 </style>
