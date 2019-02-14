@@ -1,15 +1,4 @@
 {
-    "editor.minimap.enabled": false,
     "editor.formatOnSave": true,
-    "eslint.validate": [
-        "typescript",
-        "javascriptreact",
-        {
-            "language": "vue",
-            "autoFix": true
-        }
-    ],
-    "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
-    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-    "eslint.autoFixOnSave": true
+    "editor.minimap.enabled": false,
 }
