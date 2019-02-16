@@ -5,7 +5,7 @@ import Vuetify from "vuetify";
 import VueFire from "vuefire";
 import "vuetify/dist/vuetify.min.css";
 
-Vue.use(Vuetify, { iconfont: "md" });
+Vue.use(Vuetify, { iconfont: "mdi" });
 Vue.use(VueFire);
 
 // Vue.prototype.$isLoggedIn = false;
