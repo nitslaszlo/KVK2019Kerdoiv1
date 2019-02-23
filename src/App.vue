@@ -304,8 +304,19 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <v-flex xs12 sm12 md12 lg12 xl12 >
-              <v-btn class="mx-auto" width="600" dark color="red" @click="add()">Kérdőív adatainak mentése</v-btn>
+            <!-- MENTÉS -->
+            <v-flex xs12 sm12 md12 lg12 xl12>
+              <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
+                <v-img></v-img>
+                <v-card-title primary-title>
+                  <div>
+                    <v-icon class="floatleft" large left>save</v-icon>
+                  </div>
+                </v-card-title>
+                <v-card-actions>
+                  <v-btn class="mx-auto" dark color="red" @click="add()">Kérdőív adatainak mentése</v-btn>
+                </v-card-actions>
+              </v-card>
             </v-flex>
           </v-layout>
         </v-container>
