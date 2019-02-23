@@ -304,8 +304,8 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <v-flex xs12 sm12 md12 lg12 xl12>
-              <v-btn dark="" @click="add()">Kérdőív adatainak mentése</v-btn>
+            <v-flex xs12 sm12 md12 lg12 xl12 >
+              <v-btn class="mx-auto" width="600" dark color="red" @click="add()">Kérdőív adatainak mentése</v-btn>
             </v-flex>
           </v-layout>
         </v-container>
@@ -409,8 +409,6 @@ export default class App extends Vue {
 
   // Új elem hozzáadása az adatbázishoz
   private add(): void {
-    // const createdAt = new Date();
-
     const obj = {} as any;
     obj.createdAt = new Date();
     obj.megyek = this.megyek;
@@ -430,7 +428,11 @@ export default class App extends Vue {
     db.collection("valaszok1") // Elem feltöltése az adatbázisba
       .add(obj)
       .then(docRef => {
-        alert(`Adatok mentése sikeres! Rekord azonosítója: ${docRef.id} Köszönöm a kérdőív kitöltését!`);
+        alert(
+          `Adatok mentése sikeres! Rekord azonosítója: ${
+            docRef.id
+          } Köszönöm a kérdőív kitöltését!`
+        );
       })
       .catch(error => {
         alert(`Hiba az adatok mentésekor: ${error}`);
