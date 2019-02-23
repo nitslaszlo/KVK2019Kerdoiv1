@@ -305,7 +305,7 @@
               </v-card>
             </v-flex>
             <v-flex xs12 sm12 md12 lg12 xl12>
-              <v-btn flat color="red" @click="add()">Delete</v-btn>
+              <v-btn dark="" @click="add()">Kérdőív adatainak mentése</v-btn>
             </v-flex>
           </v-layout>
         </v-container>
@@ -430,10 +430,10 @@ export default class App extends Vue {
     db.collection("valaszok1") // Elem feltöltése az adatbázisba
       .add(obj)
       .then(docRef => {
-        alert(`Document written with ID: ${docRef.id}`);
+        alert(`Adatok mentése sikeres! Rekord azonosítója: ${docRef.id} Köszönöm a kérdőív kitöltését!`);
       })
       .catch(error => {
-        alert(`Error adding document: ${error}`);
+        alert(`Hiba az adatok mentésekor: ${error}`);
       });
   }
 }
