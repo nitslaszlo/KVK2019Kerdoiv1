@@ -279,7 +279,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 13.  A főállású tanárok / szakoktatók közül hányan használják aktívan NEM saját üzemeltetésű LMS keretrendszert? -->
+            <!-- 13.  A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű LMS keretrendszert? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
@@ -288,7 +288,7 @@
                     <v-icon class="floatleft" large left>people</v-icon>
                     <span
                       :class="`${kulsoLMS ? '' : 'disabledTitle'}`"
-                    >13. A főállású tanárok / szakoktatók közül hányan használják aktívan NEM saját üzemeltetésű LMS keretrendszert?</span>
+                    >13. A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű LMS keretrendszert?</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -311,6 +311,7 @@
                 <v-card-title primary-title>
                   <div>
                     <v-icon class="floatleft" large left>save</v-icon>
+                    <span>A kérdőív adatainak mentéséhez az 1-6. kérdéseket legyen szíves megadni.</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -420,6 +421,15 @@ export default class App extends Vue {
 
   // Új elem hozzáadása az adatbázishoz
   private add(): void {
+    if (this.megyek.length === 0 ||
+        this.tanulokSzama === "" ||
+        this.tanarokSzama === "" ||
+        this.rendszergazdakSzama === "" ||
+        this.letoltesiSebesseg === "" ||
+        this.szamitogepekSzama === "") {
+            alert("A kérdőív adatainak mentéséhez az 1-6. kérdéseket legyen szíves megadni!");
+            return;
+        }
     const obj = {} as any;
     obj.createdAt = new Date();
     obj.megyek = this.megyek;
@@ -440,14 +450,28 @@ export default class App extends Vue {
       .add(obj)
       .then(docRef => {
         alert(
-          `Adatok mentése sikeres! Rekord azonosítója: ${
+          `Adatok mentése sikeres!\nRekord azonosítója: ${
             docRef.id
-          } Köszönöm a kérdőív kitöltését!`
+          }\nKöszönöm a kérdőív kitöltését!`
         );
       })
       .catch(error => {
         alert(`Hiba az adatok mentésekor: ${error}`);
+        return;
       });
+    this.megyek = [];
+    this.tanulokSzama = "";
+    this.tanarokSzama = "";
+    this.rendszergazdakSzama = "";
+    this.letoltesiSebesseg = "";
+    this.szamitogepekSzama = "";
+    this.lmsEE = false;
+    this.lmsHW = false;
+    this.lmsLAN = false;
+    this.lmsValasztott = [];
+    this.lmsHasznalloTanarok = "";
+    this.kulsoLMS = false;
+    this.kulsoLMSHasznalloTanarok = "";
   }
 }
 </script>
