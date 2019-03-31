@@ -129,7 +129,7 @@
                 <v-card-title primary-title>
                   <div>
                     <v-icon class="floatleft" large left>cloud_download</v-icon>
-                    <span>5. Internet kapcsolat letöltési sávszélessége [Mbit/sec]</span>
+                    <span>5. Internet kapcsolat letöltési sávszélessége</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -278,7 +278,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 10. Tanárok / szakoktatók használnak NEM saját üzemeltetésű LMS keretrendszert? -->
+            <!-- 10. Tanárok / szakoktatók használnak NEM saját üzemeltetésű e-learning (LMS) keretrendszert? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
@@ -299,7 +299,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 10.1  A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű LMS keretrendszert? -->
+            <!-- 10.1  A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű e-learning (LMS) keretrendszert? -->
             <v-flex xs12 sm12 md12 lg12 xl12 v-show="kulsoLMS">
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
@@ -308,7 +308,7 @@
                     <v-icon class="floatleft" large left>people</v-icon>
                     <span
                       :class="`${kulsoLMS ? '' : 'disabledTitle'}`"
-                    >10.1 A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű LMS keretrendszert?</span>
+                    >10.1 A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű e-learning (LMS) keretrendszert?</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -570,9 +570,11 @@ export default class App extends Vue {
   color: #2c3e50;
   background-color: #eeeeee;
 }
+
 .myLink {
   text-decoration: none;
 }
+
 .floatleft {
   float: left;
 }
