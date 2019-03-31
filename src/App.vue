@@ -517,14 +517,14 @@ export default class App extends Vue {
     obj.K06_szamitogepekSzama = this.szamitogepekSzama;
     obj.K07_lmsEE = this.lmsEE;
     obj.K08_lmsHW = this.lmsHW;
-    obj.K09_lmsLAN = this.lmsLAN;
+    obj.K090_lmsLAN = this.lmsLAN;
 
     if (this.lmsLAN) {
       obj.K091_lmsValasztott = this.lmsValasztott;
       obj.K092_lmsHasznalloTanarok = this.kulsoLMSHasznalloTanarok;
     }
 
-    obj.K10_kulsoLMS = this.kulsoLMS;
+    obj.K100_kulsoLMS = this.kulsoLMS;
 
     if (this.kulsoLMS) {
       obj.K101_kulsoLMSHasznalloTanarok = this.kulsoLMSHasznalloTanarok;
