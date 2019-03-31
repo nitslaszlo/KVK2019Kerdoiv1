@@ -9,6 +9,29 @@
       <v-content>
         <v-container fluid>
           <v-layout row wrap justify-center>
+            <!-- Bevezető -->
+            <v-flex xs12 sm12 md12 lg12 xl12>
+              <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
+                <v-img></v-img>
+                <v-card-title primary-title>
+                  <div>
+                    <v-icon class="floatleft" large left>mdi-information-outline</v-icon>
+                    <span>
+                      Tisztelt Igazgat Úr! Kedves Kolléga!
+                      <br>A BME GTK Alkalmazott Pedagógia és Pszichológia
+                      Intézet Műszaki Pedagógia Tanszék Közoktatási Vezető és pedagógus-szakvizsga szakirányú továbbképzési
+                      szak végzős hallgatójaként készítem szakdolgozatomat.
+                      <br>A dolgozat címe:
+                      <br>
+                      <b>E-learning keretrendszerek alkalmazása az iskolarendszerű szakképzésben</b>
+                      <br>Kérem, hogy a következő kérdőív kitöltésével segítse kutatásomat!
+                      <br>Köszönettel: Nits László
+                    </span>
+                  </div>
+                </v-card-title>
+              </v-card>
+            </v-flex>
+
             <!-- 1. Melyik megyében / megyékben található az intézmény? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -106,7 +129,7 @@
                 <v-card-title primary-title>
                   <div>
                     <v-icon class="floatleft" large left>cloud_download</v-icon>
-                    <span>5. Internet kapcsolat letöltési sávszélessége</span>
+                    <span>5. Internet kapcsolat letöltési sávszélessége [Mbit/sec]</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -133,26 +156,25 @@
                   </div>
                 </v-card-title>
                 <v-card-actions>
-                  <v-text-field
-                    type="text"
-                    suffix="darab"
-                    v-model="szamitogepekSzama"
-                    label="Számítógépek száma"
-                    mask="#######"
+                  <v-select
+                    :items="tanuloiSzamitogepekLanLista"
+                    suffix="db"
                     clearable
+                    label="Számítógépek száma"
                     outline
+                    v-model="szamitogepekSzama"
                   />
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 7. Saját telepítésű LMS keretrendszer telepítéséhez és üzemeltetésre rendelkeznek megfelelően képzett szakemberrel -->
+            <!-- 7. Saját telepítésű e-learning (LMS) keretrendszer telepítéséhez és üzemeltetésre rendelkeznek megfelelően képzett szakemberrel? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
                   <div>
                     <v-icon large left>mdi-account-question</v-icon>
-                    <span>7. Saját telepítésű LMS keretrendszer telepítéséhez és üzemeltetésre rendelkeznek megfelelően képzett szakemberrel</span>
+                    <span>7. Saját telepítésű e-learning (LMS) keretrendszer telepítéséhez és üzemeltetésre rendelkeznek megfelelően képzett szakemberrel?</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -165,14 +187,14 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 8. Saját telepítésű LMS keretrendszer üzemeltetésre rendelkeznek megfelelő hardver eszközökkel? -->
+            <!-- 8. Saját telepítésű e-learning (LMS) keretrendszer üzemeltetésre rendelkeznek megfelelő hardvereszközökkel? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
                   <div>
                     <v-icon large left>mdi-lan-connect</v-icon>
-                    <span>8. Saját telepítésű LMS keretrendszer üzemeltetésre rendelkeznek megfelelő hardver eszközökkel?</span>
+                    <span>8. Saját telepítésű e-learning (LMS) keretrendszer üzemeltetésre rendelkeznek megfelelő hardvereszközökkel?</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -185,14 +207,14 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 9.	Üzemeltetnek LMS keretrendszert az intézmény LAN hálózatán? -->
+            <!-- 9.	Üzemeltetnek e-learning (LMS) keretrendszert az intézmény LAN hálózatán? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
                   <div>
                     <v-icon large left>mdi-auto-fix</v-icon>
-                    <span>9. Üzemeltetnek LMS keretrendszert az intézmény LAN hálózatán?</span>
+                    <span>9. Üzemeltetnek e-learning (LMS) keretrendszert az intézmény LAN hálózatán?</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -206,8 +228,8 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 10. Melyik LMS rendszert / rendszereket választották? -->
-            <v-flex xs12 sm12 md12 lg12 xl12>
+            <!-- 9.1 Melyik e-learning (LMS) rendszert / rendszereket választották? -->
+            <v-flex xs12 sm12 md12 lg12 xl12 v-show="lmsLAN">
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
@@ -215,7 +237,7 @@
                     <v-icon class="floatleft" large left>school</v-icon>
                     <span
                       :class="`${lmsLAN ? '' : 'disabledTitle'}`"
-                    >10. Melyik LMS rendszert / rendszereket választották?</span>
+                    >9.1 Melyik e-learning (LMS) rendszert / rendszereket választották?</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -233,16 +255,14 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 11. A főállású tanárok / szakoktatók közül hányan használják aktívan az iskola hálózatán működő LMS keretrendszert? -->
-            <v-flex xs12 sm12 md12 lg12 xl12>
+            <!-- 9.2 A főállású tanárok / szakoktatók közül hányan használják aktívan az iskola hálózatán működő LMS keretrendszert? -->
+            <v-flex xs12 sm12 md12 lg12 xl12 v-show="lmsLAN">
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
                   <div>
                     <v-icon class="floatleft" large left>people</v-icon>
-                    <span
-                      :class="`${lmsLAN ? '' : 'disabledTitle'}`"
-                    >11. A főállású tanárok / szakoktatók közül hányan használják aktívan az iskola hálózatán működő LMS keretrendszert?</span>
+                    <span>9.2 A főállású tanárok / szakoktatók közül hányan használják aktívan az iskola hálózatán működő LMS keretrendszert?</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -258,14 +278,14 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 12. Tanárok / szakoktatók használnak NEM saját üzemeltetésű LMS keretrendszert? -->
+            <!-- 10. Tanárok / szakoktatók használnak NEM saját üzemeltetésű LMS keretrendszert? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
                   <div>
                     <v-icon large left>school</v-icon>
-                    <span>12. Tanárok / szakoktatók használnak NEM saját üzemeltetésű LMS keretrendszert?</span>
+                    <span>10. Tanárok / szakoktatók használnak NEM saját üzemeltetésű e-learning (LMS) keretrendszert?</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -279,8 +299,8 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- 13.  A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű LMS keretrendszert? -->
-            <v-flex xs12 sm12 md12 lg12 xl12>
+            <!-- 10.1  A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű LMS keretrendszert? -->
+            <v-flex xs12 sm12 md12 lg12 xl12 v-show="kulsoLMS">
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
                 <v-img></v-img>
                 <v-card-title primary-title>
@@ -288,7 +308,7 @@
                     <v-icon class="floatleft" large left>people</v-icon>
                     <span
                       :class="`${kulsoLMS ? '' : 'disabledTitle'}`"
-                    >13. A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű LMS keretrendszert?</span>
+                    >10.1 A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű LMS keretrendszert?</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -311,7 +331,7 @@
                 <v-card-title primary-title>
                   <div>
                     <v-icon class="floatleft" large left>save</v-icon>
-                    <span>A kérdőív adatainak mentéséhez az 1-6. kérdéseket legyen szíves megadni.</span>
+                    <span>Mentés</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -394,6 +414,19 @@ export default class App extends Vue {
 
   private rendszergazdakSzamaLista: string[] = ["0", "1", "2", "3-"];
 
+  private tanuloiSzamitogepekLanLista: string[] = [
+    "-20",
+    "21-40",
+    "41-60",
+    "41-80",
+    "81-100",
+    "100-150",
+    "151-200",
+    "201-300",
+    "301-400",
+    "401-"
+  ];
+
   private lmsHasznalloTanarokLista: string[] = [
     "1-5",
     "6-10",
@@ -405,46 +438,97 @@ export default class App extends Vue {
     "101-"
   ];
 
-  private megyek: string[] = [];
-  private tanulokSzama: string = "";
-  private tanarokSzama: string = "";
-  private rendszergazdakSzama: string = "";
-  private letoltesiSebesseg: string = "";
-  private szamitogepekSzama: string = "";
-  private lmsEE: boolean = false;
-  private lmsHW: boolean = false;
-  private lmsLAN: boolean = false;
-  private lmsValasztott: string[] = [];
-  private lmsHasznalloTanarok = "";
-  private kulsoLMS: boolean = false;
-  private kulsoLMSHasznalloTanarok = "";
+  private megyek: string[] = []; // 1
+  private tanulokSzama: string = ""; // 2
+  private tanarokSzama: string = ""; // 3
+  private rendszergazdakSzama: string = ""; // 4
+  private letoltesiSebesseg: string = "";  // 5
+  private szamitogepekSzama: string = ""; // 6
+  private lmsEE: boolean = false; // 7
+  private lmsHW: boolean = false; // 8
+  private lmsLAN: boolean = false; // 9
+  private lmsValasztott: string[] = []; // 9.1
+  private lmsHasznalloTanarok = ""; // 9.2
+  private kulsoLMS: boolean = false; // 10
+  private kulsoLMSHasznalloTanarok = ""; // 10.1
 
   // Új elem hozzáadása az adatbázishoz
   private add(): void {
-    if (this.megyek.length === 0 ||
-        this.tanulokSzama === "" ||
-        this.tanarokSzama === "" ||
-        this.rendszergazdakSzama === "" ||
-        this.letoltesiSebesseg === "" ||
-        this.szamitogepekSzama === "") {
-            alert("A kérdőív adatainak mentéséhez az 1-6. kérdéseket legyen szíves megadni!");
-            return;
-        }
+    let nemAdottVálaszt: string = "";
+
+    if (this.megyek.length === 0) {
+      nemAdottVálaszt += "1.  ";
+    }
+    if (this.tanulokSzama === "") {
+      nemAdottVálaszt += "2.  ";
+    }
+    if (this.tanarokSzama === "") {
+      nemAdottVálaszt += "3.  ";
+    }
+    if (this.rendszergazdakSzama === "") {
+      nemAdottVálaszt += "4.  ";
+    }
+    if (this.letoltesiSebesseg === "") {
+      nemAdottVálaszt += "5.  ";
+    }
+    if (this.szamitogepekSzama === "") {
+      nemAdottVálaszt += "6.  ";
+    }
+    if (nemAdottVálaszt.length > 0) {
+      // tslint:disable-next-line:max-line-length
+      alert(`A kérdőív adatainak mentéséhez a következő kérdésekre a választ legyen szíves megadni: \r${nemAdottVálaszt}`);
+      return;
+    }
+
+    if (this.lmsLAN) {
+      nemAdottVálaszt = "";
+      if (this.lmsValasztott.length === 0) {
+        nemAdottVálaszt += "9.1  ";
+      }
+      if (this.lmsHasznalloTanarok === "") {
+        nemAdottVálaszt += "9.2  ";
+      }
+      if (nemAdottVálaszt.length > 0) {
+        // tslint:disable-next-line:max-line-length
+        alert(`A kérdőív adatainak mentéséhez a következő kérdésekre a választ legyen szíves megadni: \r${nemAdottVálaszt}`);
+        return;
+      }
+    }
+
+    if (this.kulsoLMS) {
+      nemAdottVálaszt = "";
+      if (this.kulsoLMSHasznalloTanarok === "") {
+        nemAdottVálaszt += "10.1";
+      }
+      if (nemAdottVálaszt.length > 0) {
+        // tslint:disable-next-line:max-line-length
+        alert(`A kérdőív adatainak mentéséhez a következő kérdésekre a választ legyen szíves megadni: \r${nemAdottVálaszt}`);
+        return;
+      }
+    }
+
     const obj = {} as any;
-    obj.createdAt = new Date();
-    obj.megyek = this.megyek;
-    obj.tanulokSzama = this.tanulokSzama;
-    obj.tanarokSzama = this.tanarokSzama;
-    obj.rendszergazdakSzama = this.rendszergazdakSzama;
-    obj.letoltesiSebesseg = this.letoltesiSebesseg;
-    obj.szamitogepekSzama = this.szamitogepekSzama;
-    obj.lmsEE = this.lmsEE;
-    obj.lmsHW = this.lmsHW;
-    obj.lmsLAN = this.lmsLAN;
-    obj.lmsValasztott = this.lmsValasztott;
-    obj.lmsHasznalloTanarok = this.kulsoLMSHasznalloTanarok;
-    obj.kulsoLMS = this.kulsoLMS;
-    obj.kulsoLMSHasznalloTanarok = this.kulsoLMSHasznalloTanarok;
+    obj.K00_createdAt = new Date();
+    obj.K01_megyek = this.megyek;
+    obj.K02_tanulokSzama = this.tanulokSzama;
+    obj.K03_tanarokSzama = this.tanarokSzama;
+    obj.K04_rendszergazdakSzama = this.rendszergazdakSzama;
+    obj.K05_letoltesiSebesseg = this.letoltesiSebesseg;
+    obj.K06_szamitogepekSzama = this.szamitogepekSzama;
+    obj.K07_lmsEE = this.lmsEE;
+    obj.K08_lmsHW = this.lmsHW;
+    obj.K09_lmsLAN = this.lmsLAN;
+
+    if (this.lmsLAN) {
+      obj.K091_lmsValasztott = this.lmsValasztott;
+      obj.K092_lmsHasznalloTanarok = this.kulsoLMSHasznalloTanarok;
+    }
+
+    obj.K10_kulsoLMS = this.kulsoLMS;
+
+    if (this.kulsoLMS) {
+      obj.K101_kulsoLMSHasznalloTanarok = this.kulsoLMSHasznalloTanarok;
+    }
 
     db.collection("valaszok1") // Elem feltöltése az adatbázisba
       .add(obj)
@@ -459,6 +543,7 @@ export default class App extends Vue {
         alert(`Hiba az adatok mentésekor: ${error}`);
         return;
       });
+
     this.megyek = [];
     this.tanulokSzama = "";
     this.tanarokSzama = "";
