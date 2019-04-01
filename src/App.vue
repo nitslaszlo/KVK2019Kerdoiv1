@@ -3,7 +3,7 @@
     <v-app>
       <v-toolbar app>
         <v-icon large left>mdi-chart-line</v-icon>
-        <v-toolbar-title>LMS keretrendszerek az iskolarendszerű szakképzésben - kérdőív</v-toolbar-title>
+        <v-toolbar-title>LMS keretrendszerek az iskolarendszerű szakképzésben - kérdőív1</v-toolbar-title>
         <v-spacer/>
       </v-toolbar>
       <v-content>
@@ -17,7 +17,7 @@
                   <div>
                     <v-icon class="floatleft" large left>mdi-information-outline</v-icon>
                     <span>
-                      Tisztelt Igazgató Asszony/Úr! Kedves Kolléga!
+                      Tisztelt Igazgató Asszony / Úr! Kedves Kolléga!
                       <br>A BME GTK Alkalmazott Pedagógia és Pszichológia
                       Intézet Műszaki Pedagógia Tanszék Közoktatási Vezető és pedagógus-szakvizsga szakirányú továbbképzési
                       szak végzős hallgatójaként készítem szakdolgozatomat.
