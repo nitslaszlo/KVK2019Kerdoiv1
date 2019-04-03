@@ -3,7 +3,7 @@
     <v-app>
       <v-toolbar app>
         <v-icon large left>mdi-chart-line</v-icon>
-        <v-toolbar-title>LMS keretrendszerek az iskolarendszerű szakképzésben - kérdőív1</v-toolbar-title>
+        <v-toolbar-title>LMS keretrendszerek az iskolarendszerű szakképzésben - kérdőív iskolavezetők számára</v-toolbar-title>
         <v-spacer/>
       </v-toolbar>
       <v-content>
