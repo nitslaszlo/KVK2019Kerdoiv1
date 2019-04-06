@@ -9,6 +9,7 @@
       <v-content>
         <v-container fluid>
           <v-layout row wrap justify-center>
+
             <!-- Bevezető -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -56,6 +57,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 2. Tanulók száma a nappali tagozaton -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -78,6 +80,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 3. Fő állású tanárok / szakoktatók száma az intézményben -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -100,6 +103,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 4. Főállású rendszergazdák száma -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -122,6 +126,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 5. Internet kapcsolat letöltési sávszélessége -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -145,6 +150,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 6. Tanulók által használt, LAN hálózatba kötött számítógépek száma -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -167,6 +173,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 7. Saját telepítésű e-learning (LMS) keretrendszer telepítéséhez és üzemeltetésre rendelkeznek megfelelően képzett szakemberrel? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -187,6 +194,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 8. Saját telepítésű e-learning (LMS) keretrendszer üzemeltetésre rendelkeznek megfelelő hardvereszközökkel? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -207,6 +215,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 9.	Üzemeltetnek e-learning (LMS) keretrendszert az intézmény LAN hálózatán? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -228,6 +237,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 9.1 Melyik e-learning (LMS) rendszert / rendszereket választották? -->
             <v-flex xs12 sm12 md12 lg12 xl12 v-show="lmsLAN">
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -255,6 +265,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 9.2 A főállású tanárok / szakoktatók közül hányan használják aktívan az iskola hálózatán működő LMS keretrendszert? -->
             <v-flex xs12 sm12 md12 lg12 xl12 v-show="lmsLAN">
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -278,6 +289,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 10. Tanárok / szakoktatók használnak NEM saját üzemeltetésű e-learning (LMS) keretrendszert? -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -299,6 +311,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- 10.1  A főállású tanárok / szakoktatók közül hányan használnak aktívan NEM saját üzemeltetésű e-learning (LMS) keretrendszert? -->
             <v-flex xs12 sm12 md12 lg12 xl12 v-show="kulsoLMS">
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -324,6 +337,7 @@
                 </v-card-actions>
               </v-card>
             </v-flex>
+
             <!-- MENTÉS -->
             <v-flex xs12 sm12 md12 lg12 xl12>
               <v-card class="mx-auto my-2" color="lightblue" max-width="600" elevation="18" dark>
@@ -409,8 +423,6 @@ export default class App extends Vue {
     "Sakai",
     "Egyéb"
   ];
-
-  private igenNem: string[] = ["Igen", "Nem"];
 
   private rendszergazdakSzamaLista: string[] = ["0", "1", "2", "3-"];
 
